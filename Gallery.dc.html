@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-39b38995-affe-44a8-b16d-9f2643bf4761/styles.css">
+<script src="_ds/organic-39b38995-affe-44a8-b16d-9f2643bf4761/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #fffdf6;
+    --color-surface: #eef6e9;
+    --joy-yellow: #f9d75c;
+    --joy-yellow-100: #fdf3d0;
+    --joy-pink: #f2a2b5;
+    --joy-pink-100: #fdeaf0;
+  }
+  html { scroll-behavior: smooth; }
+  a { text-decoration: none; }
+  a:hover { color: var(--color-accent-700); }
+  @media (max-width: 900px) {
+    #foot { grid-template-columns: 1fr !important; }
+    #nav-links { display: none !important; }
+  }
+</style>
+</helmet>
+
+<div style="overflow-x: hidden">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--color-bg)">
+    <div class="nav" style="max-width: 1080px; margin: 0 auto; padding: var(--space-4) var(--space-6)">
+      <a class="nav-brand" href="Home.dc.html" style="display: flex; align-items: center; gap: var(--space-2); color: inherit">
+        <img src="assets/mascot.png" alt="Shining Star" style="width: 104px; height: 80px; object-fit: contain; mix-blend-mode: multiply" />
+        <span style="line-height: 1.05; font-size: 27px">Shining Star
+          <span style="display: block; font-family: var(--font-body); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-700)">Play Group · Gurugram</span>
+        </span>
+      </a>
+      <nav id="nav-links" style="display: flex; align-items: center; gap: var(--space-4)">
+        <a href="Home.dc.html">Home</a>
+        <a href="Classes.dc.html">Classes</a>
+        <a href="Gallery.dc.html" aria-current="page">Gallery</a>
+        <a href="Founder.dc.html">Our Founder</a>
+        <a href="Admissions.dc.html">Admissions</a>
+      </nav>
+      <a class="btn btn-primary" href="tel:09582200999" style="color: var(--color-bg)">Call 095822 00999</a>
+    </div>
+  </header>
+
+  <section style="max-width: 1080px; margin: 0 auto; padding: calc(var(--space-8) * 2.2) var(--space-6) var(--space-6)">
+    <span class="tag tag-accent" style="font-size: 13px; padding: 6px 14px">★ Real mornings at school</span>
+    <h1 style="font-size: clamp(38px, 5vw, 62px); line-height: 1.04; margin: var(--space-4) 0 var(--space-3); max-width: 20ch">Life at Shining Star</h1>
+    <p style="font-size: 19px; line-height: 1.6; max-width: 50ch; color: var(--color-neutral-800)">Splash days, festival mornings, role-play corners and ordinary Tuesdays. Pick a theme to see only those pictures.</p>
+  </section>
+
+  <section style="max-width: 1080px; margin: 0 auto; padding: 0 var(--space-6) calc(var(--space-8) * 2.2)">
+    <div style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: calc(var(--space-8) * 1.2)">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="10">
+        <button class="btn" type="button" onClick="{{ t.onSelect }}" style="font-size: 14.5px; padding: var(--space-2) var(--space-4); background: {{ t.bg }}; color: {{ t.fg }}; border-color: {{ t.bc }}">{{ t.name }}</button>
+      </sc-for>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: calc(var(--space-8) * 1.2)">
+      <sc-for list="{{ shots }}" as="s" hint-placeholder-count="9">
+        <figure>
+          <div class="washed lift" style="aspect-ratio: {{ s.ratio }}; border-radius: calc(var(--radius-lg) * 1.15); overflow: hidden; background: var(--color-surface)">
+            <img src="{{ s.src }}" alt="{{ s.caption }}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+          </div>
+          <figcaption style="display: flex; justify-content: space-between; gap: var(--space-2); font-size: 13.5px; padding: var(--space-2) var(--space-3) 0; color: var(--color-neutral-800)">
+            <span>{{ s.caption }}</span>
+            <span style="color: var(--color-accent-700)">{{ s.cls }}</span>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+
+    <div class="card" style="background: var(--color-accent-2-100); padding: var(--space-6); margin-top: calc(var(--space-8) * 1.6); max-width: 56ch">
+      <div class="card-title" style="font-size: 20px; color: var(--color-accent-2-900)">Sending photos?</div>
+      <p class="card-body" style="font-size: 15px; opacity: 1; color: var(--color-accent-2-800)">WhatsApp them to <a href="tel:09582200999" style="color: var(--color-accent-700)">095822 00999</a> and we'll place them class by class. Landscape shots work best in these frames, and we only publish pictures parents have cleared.</p>
+    </div>
+  </section>
+
+  <footer style="background: var(--color-accent-2-900); color: var(--color-accent-2-100)">
+    <div id="foot" style="max-width: 1080px; margin: 0 auto; padding: calc(var(--space-8) * 2.2) var(--space-6); display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: var(--space-6)">
+      <div>
+        <div style="font-family: var(--font-heading); font-size: 24px; color: var(--color-bg)">Shining Star Play Group ★</div>
+        <p style="font-size: 14.5px; margin: var(--space-2) 0 0; opacity: .85">Laxman Vihar, Plot no. 912/31,<br>Gurugram, Haryana 122006</p>
+      </div>
+      <div style="font-size: 14.5px; display: grid; gap: 6px; align-content: start">
+        <div style="font-family: var(--font-heading); font-size: 16px; color: var(--color-bg)">Reach us</div>
+        <a href="tel:09582200999" style="color: var(--joy-yellow)">095822 00999</a>
+        <div style="opacity: .85">Opens 9:00 am · Mon–Sat</div>
+        <a href="Admissions.dc.html" style="color: var(--joy-yellow)">Map &amp; directions</a>
+      </div>
+      <div style="font-size: 14.5px; display: grid; gap: 6px; align-content: start">
+        <div style="font-family: var(--font-heading); font-size: 16px; color: var(--color-bg)">Pages</div>
+        <a href="Home.dc.html" style="color: var(--joy-yellow)">Home</a>
+        <a href="Classes.dc.html" style="color: var(--joy-yellow)">Classes &amp; learning</a>
+        <a href="Founder.dc.html" style="color: var(--joy-yellow)">Our founder</a>
+        <a href="Admissions.dc.html" style="color: var(--joy-yellow)">Admissions &amp; fees</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SHOTS = [
+  { cls: "Splash days", caption: "Splash zone, summer week", src: "assets/photo-splash-group.jpg", ratio: "3/4" },
+  { cls: "Splash days", caption: "Goggles on, ready to jump in", src: "assets/photo-splash-day.jpg", ratio: "3/4" },
+  { cls: "Splash days", caption: "Summer corner, all our own craft", src: "assets/photo-summer-board.jpg", ratio: "3/4" },
+  { cls: "Role play", caption: "The lassi counter", src: "assets/photo-lassi-counter.jpg", ratio: "3/4" },
+  { cls: "Role play", caption: "Mummy's kitchen", src: "assets/photo-play-kitchen.jpg", ratio: "3/4" },
+  { cls: "Festivals", caption: "Mother's Day, माँ", src: "assets/photo-mothers-day.jpg", ratio: "3/4" },
+  { cls: "Festivals", caption: "Cards for Mumma", src: "assets/photo-hearts.jpg", ratio: "3/4" },
+  { cls: "Festivals", caption: "Happy Holi", src: "assets/photo-holi.jpg", ratio: "3/4" },
+  { cls: "In class", caption: "Letter of the week", src: "assets/photo-letter-day.jpg", ratio: "3/4" },
+  { cls: "In class", caption: "School anniversary", src: "assets/photo-anniversary.jpg", ratio: "3/4" }
+];
+
+class Component extends DCLogic {
+  state = { filter: "All photos" };
+  renderVals() {
+    const f = this.state.filter;
+    const names = ["All photos", "Splash days", "Role play", "Festivals", "In class"];
+    const list = f === "All photos" ? SHOTS : SHOTS.filter(s => s.cls === f);
+    return {
+      tabs: names.map(name => ({
+        name,
+        bg: name === f ? "var(--color-accent)" : "transparent",
+        fg: name === f ? "var(--color-bg)" : "var(--color-text)",
+        bc: name === f ? "var(--color-accent)" : "var(--color-divider)",
+        onSelect: () => this.setState({ filter: name })
+      })),
+      shots: list
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-39b38995-affe-44a8-b16d-9f2643bf4761/styles.css">
+<script src="_ds/organic-39b38995-affe-44a8-b16d-9f2643bf4761/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #fffdf6;
+    --color-surface: #eef6e9;
+    --joy-yellow: #f9d75c;
+    --joy-yellow-100: #fdf3d0;
+    --joy-pink: #f2a2b5;
+    --joy-pink-100: #fdeaf0;
+  }
+  html { scroll-behavior: smooth; }
+  a { text-decoration: none; }
+  a:hover { color: var(--color-accent-700); }
+  @media (max-width: 900px) {
+    #panel, #sched, #foot { grid-template-columns: 1fr !important; }
+    #nav-links { display: none !important; }
+  }
+  @media (max-width: 620px) { #areas { grid-template-columns: 1fr !important; } }
+  @media (max-width: 700px) {
+    #timeline > div[aria-hidden] { display: none !important; }
+    #timeline > div { grid-template-columns: 82px 28px 1fr !important; }
+  }
+</style>
+</helmet>
+
+<div style="overflow-x: hidden">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--color-bg)">
+    <div class="nav" style="max-width: 1080px; margin: 0 auto; padding: var(--space-4) var(--space-6)">
+      <a class="nav-brand" href="Home.dc.html" style="display: flex; align-items: center; gap: var(--space-2); color: inherit">
+        <img src="assets/mascot.png" alt="Shining Star" style="width: 104px; height: 80px; object-fit: contain; mix-blend-mode: multiply" />
+        <span style="line-height: 1.05; font-size: 27px">Shining Star
+          <span style="display: block; font-family: var(--font-body); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-700)">Play Group · Gurugram</span>
+        </span>
+      </a>
+      <nav id="nav-links" style="display: flex; align-items: center; gap: var(--space-4)">
+        <a href="Home.dc.html">Home</a>
+        <a href="Classes.dc.html" aria-current="page">Classes</a>
+        <a href="Gallery.dc.html">Gallery</a>
+        <a href="Founder.dc.html">Our Founder</a>
+        <a href="Admissions.dc.html">Admissions</a>
+      </nav>
+      <a class="btn btn-primary" href="tel:09582200999" style="color: var(--color-bg)">Call 095822 00999</a>
+    </div>
+  </header>
+
+  <section style="max-width: 1080px; margin: 0 auto; padding: calc(var(--space-8) * 2.2) var(--space-6) var(--space-6)">
+    <span class="tag tag-accent-2" style="font-size: 13px; padding: 6px 14px">★ Pre-Nursery to Class 3</span>
+    <h1 style="font-size: clamp(38px, 5vw, 62px); line-height: 1.04; margin: var(--space-4) 0 var(--space-3); max-width: 22ch; text-wrap: balance">What will your child learn at every stage?</h1>
+    <p style="font-size: 19px; line-height: 1.6; max-width: 52ch; color: var(--color-neutral-800)">Pick a class to see the plan we follow — language, numbers, hands and behaviour — and what your child should be able to do by the end of the year.</p>
+  </section>
+
+  <section style="max-width: 1080px; margin: 0 auto; padding: 0 var(--space-6) calc(var(--space-8) * 2.2)">
+    <div style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-6)">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="7">
+        <button class="btn" type="button" onClick="{{ t.onSelect }}" style="font-size: 15px; padding: var(--space-2) var(--space-4); background: {{ t.bg }}; color: {{ t.fg }}; border-color: {{ t.bc }}">{{ t.name }}</button>
+      </sc-for>
+    </div>
+
+    <div id="panel" style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: calc(var(--space-8) * 1.5); align-items: start">
+      <div class="card elev-md" style="background: var(--joy-yellow-100); padding: var(--space-8); gap: var(--space-4)">
+        <div>
+          <span class="tag tag-accent">{{ active.age }}</span>
+          <h2 style="font-size: 40px; margin: var(--space-3) 0 0">{{ active.name }}</h2>
+        </div>
+        <p style="font-size: 17.5px; line-height: 1.55; margin: 0; color: var(--color-neutral-800)">{{ active.intro }}</p>
+        <div style="padding-top: var(--space-4); border-top: 1px solid var(--color-divider)">
+          <h6 style="margin: 0 0 var(--space-2); font-family: var(--font-body); font-weight: 600; color: var(--color-neutral-700)">A day includes</h6>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px">
+            <sc-for list="{{ active.day }}" as="d" hint-placeholder-count="4">
+              <span class="tag tag-neutral" style="font-size: 13px; padding: 5px 12px">{{ d }}</span>
+            </sc-for>
+          </div>
+        </div>
+        <div style="font-size: 28px; color: var(--joy-yellow); line-height: 1">★ ★ ★</div>
+      </div>
+
+      <div>
+        <div id="areas" style="display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--space-8) * 1.3) calc(var(--space-8) * 1.6); margin-bottom: calc(var(--space-8) * 1.3)">
+          <sc-for list="{{ active.areas }}" as="a" hint-placeholder-count="4">
+            <div>
+              <h3 style="font-size: 20px; margin: 0 0 var(--space-2); color: var(--color-accent-700)">{{ a.title }}</h3>
+              <div style="display: grid; gap: 8px">
+                <sc-for list="{{ a.items }}" as="i" hint-placeholder-count="3">
+                  <div style="display: flex; gap: 9px; font-size: 15.5px; line-height: 1.45; color: var(--color-neutral-800)">
+                    <span style="color: var(--color-accent-2); flex: none">★</span>
+                    <span>{{ i }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div class="card" style="background: var(--color-accent-2-900); color: var(--color-accent-2-100); padding: var(--space-6)">
+          <h6 style="margin: 0; font-family: var(--font-body); font-weight: 600; color: var(--joy-yellow)">By the end of the year</h6>
+          <p style="margin: 0; font-family: var(--font-heading); font-size: 20px; line-height: 1.35; color: var(--color-bg)">{{ active.outcome }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--color-accent-2-100)">
+    <div id="sched" style="max-width: 1080px; margin: 0 auto; padding: calc(var(--space-8) * 2.2) var(--space-6); display: grid; grid-template-columns: 0.35fr 0.65fr; gap: calc(var(--space-8) * 1.8); align-items: start">
+      <div>
+        <h2 style="font-size: clamp(30px, 3.4vw, 42px); margin: 0 0 var(--space-2)">A day at Shining Star</h2>
+        <p style="font-size: 16.5px; color: var(--color-neutral-800); margin: 0">The rhythm repeats every day, which is exactly why small children settle so fast. Timings shown are for the pre-primary classes.</p>
+        <a class="btn btn-primary" href="Admissions.dc.html" style="margin-top: var(--space-4)">See admissions &amp; fees</a>
+        <div class="washed" style="margin-top: calc(var(--space-8) * 1.2); aspect-ratio: 3/4; border-radius: calc(var(--radius-lg) * 1.4); overflow: hidden; background: var(--color-surface)">
+          <img src="assets/photo-play-kitchen.jpg" alt="Children in the role-play kitchen corner" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+        </div>
+      </div>
+      <div id="timeline" style="position: relative; display: grid; gap: calc(var(--space-8) * 0.9)">
+        <div aria-hidden="true" style="position: absolute; left: 103px; top: 10px; bottom: 10px; border-left: 3px dashed var(--color-accent-2-300)"></div>
+        <sc-for list="{{ schedule }}" as="s" hint-placeholder-count="7">
+          <div style="position: relative; display: grid; grid-template-columns: 92px 40px 1fr; align-items: start">
+            <div style="font-family: var(--font-heading); font-size: 16px; color: var(--color-accent-700); text-align: right; padding-top: 2px">{{ s.time }}</div>
+            <div style="display: grid; place-items: start center; padding-top: 4px">
+              <span style="width: 15px; height: 15px; border-radius: 50%; background: var(--color-bg); border: 3px solid var(--color-accent-2)"></span>
+            </div>
+            <div style="max-width: 34ch">
+              <div style="font-family: var(--font-heading); font-size: 19px">{{ s.what }}</div>
+              <div style="font-size: 15px; color: var(--color-neutral-700); line-height: 1.5">{{ s.note }}</div>
+            </div>
+          </div>
+        </sc-for>
+        <p style="font-size: 13px; color: var(--color-neutral-700); margin: var(--space-2) 0 0">Tell us your actual timings and we'll correct these.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: var(--color-accent-2-900); color: var(--color-accent-2-100)">
+    <div id="foot" style="max-width: 1080px; margin: 0 auto; padding: calc(var(--space-8) * 2.2) var(--space-6); display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: var(--space-6)">
+      <div>
+        <div style="font-family: var(--font-heading); font-size: 24px; color: var(--color-bg)">Shining Star Play Group ★</div>
+        <p style="font-size: 14.5px; margin: var(--space-2) 0 0; opacity: .85">Laxman Vihar, Plot no. 912/31,<br>Gurugram, Haryana 122006</p>
+      </div>
+      <div style="font-size: 14.5px; display: grid; gap: 6px; align-content: start">
+        <div style="font-family: var(--font-heading); font-size: 16px; color: var(--color-bg)">Reach us</div>
+        <a href="tel:09582200999" style="color: var(--joy-yellow)">095822 00999</a>
+        <div style="opacity: .85">Opens 9:00 am · Mon–Sat</div>
+        <a href="Admissions.dc.html" style="color: var(--joy-yellow)">Map &amp; directions</a>
+      </div>
+      <div style="font-size: 14.5px; display: grid; gap: 6px; align-content: start">
+        <div style="font-family: var(--font-heading); font-size: 16px; color: var(--color-bg)">Pages</div>
+        <a href="Home.dc.html" style="color: var(--joy-yellow)">Home</a>
+        <a href="Gallery.dc.html" style="color: var(--joy-yellow)">Gallery</a>
+        <a href="Founder.dc.html" style="color: var(--joy-yellow)">Our founder</a>
+        <a href="Admissions.dc.html" style="color: var(--joy-yellow)">Admissions &amp; fees</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const STAGES = [
+  {
+    name: "Pre-Nursery", age: "2–3 years",
+    intro: "The whole year is about comfort. A child who feels safe will talk, try and eat on their own — everything else follows from that.",
+    day: ["Circle time", "Free play", "Snack together", "Rhymes & movement"],
+    areas: [
+      { title: "Language", items: ["Listens to short stories", "Picks up 200+ everyday words", "Names people and objects"] },
+      { title: "Numbers & thinking", items: ["Counts 1–10 by rote", "Sorts by colour and size", "Matches simple shapes"] },
+      { title: "Body & hands", items: ["Holds a crayon, scribbles freely", "Runs, climbs, balances", "Tears, pastes, threads beads"] },
+      { title: "Self & others", items: ["Separates from parents calmly", "Toilet routine with help", "Waits for a short turn"] }
+    ],
+    outcome: "Your child comes to school happily, follows the daily routine, and speaks in short sentences to teachers and friends."
+  },
+  {
+    name: "Nursery", age: "3–4 years",
+    intro: "We move from playing alone to playing together, and letters and numbers arrive as sounds and quantities — never as drills.",
+    day: ["Phonics play", "Art & craft", "Outdoor time", "Story circle"],
+    areas: [
+      { title: "Language", items: ["Recognises A–Z by sight and sound", "Speaks in full sentences", "Retells a familiar story"] },
+      { title: "Numbers & thinking", items: ["Counts objects 1–20", "Understands more, less, same", "Finishes patterns and puzzles"] },
+      { title: "Body & hands", items: ["Standing lines, curves and strokes", "Uses scissors with control", "Catches and throws a ball"] },
+      { title: "Self & others", items: ["Shares materials", "Puts away own things", "Says what they feel in words"] }
+    ],
+    outcome: "Your child knows every letter and numbers to 20, writes basic strokes, and plays happily in a group."
+  },
+  {
+    name: "LKG", age: "4–5 years",
+    intro: "This is the year reading clicks. Letters become blends, blends become words, and words become the first sentence a child reads alone.",
+    day: ["Reading blocks", "Number work", "Rhyme & drama", "Free-choice corners"],
+    areas: [
+      { title: "Language", items: ["Blends and reads three-letter words", "Writes capital and small letters", "Answers 'why' questions"] },
+      { title: "Numbers & thinking", items: ["Reads and writes 1–50", "Adds with objects", "Before, after and between"] },
+      { title: "Body & hands", items: ["Correct pencil grip", "Colours inside outlines", "Skipping, hopping, dancing"] },
+      { title: "World around", items: ["Family, festivals, seasons", "Plants, animals, my body", "Road and home safety"] }
+    ],
+    outcome: "Your child reads simple three-letter words, writes the alphabet unaided, and counts and writes to 50."
+  },
+  {
+    name: "UKG", age: "5–6 years",
+    intro: "By UKG children work on their own for short stretches. We build the habits Class 1 expects: finish your work, check it, ask when stuck.",
+    day: ["Guided reading", "Maths practice", "Project work", "Games period"],
+    areas: [
+      { title: "Language", items: ["Reads short sentences aloud", "Writes four or five lines on a picture", "Rhyming words and opposites"] },
+      { title: "Maths", items: ["Numbers to 100", "Addition and subtraction to 20", "Shapes, money, time to the hour"] },
+      { title: "Habits", items: ["Works alone for 20 minutes", "Keeps a neat notebook", "Follows two-step instructions"] },
+      { title: "World around", items: ["Community helpers", "Living and non-living", "Simple observation projects"] }
+    ],
+    outcome: "Your child reads short sentences, writes a few lines independently, and starts Class 1 without needing a bridge course."
+  },
+  {
+    name: "Class 1", age: "6–7 years",
+    intro: "The first year of formal school. Subjects are separate now, but the pace stays kind — we would rather a concept be understood than covered.",
+    day: ["Subject periods", "Silent reading", "Activity period", "Homework check"],
+    areas: [
+      { title: "English", items: ["Reads a short passage", "Nouns, verbs, articles", "Writes a five-line paragraph"] },
+      { title: "Hindi", items: ["स्वर और व्यंजन fluently", "Two- and three-letter words", "Copy writing and dictation"] },
+      { title: "Maths", items: ["Numbers to 1000", "Carry-over addition and subtraction", "Measurement and calendars"] },
+      { title: "EVS & habits", items: ["Food, shelter, water, air", "Neat book work", "Prepares for a first test"] }
+    ],
+    outcome: "Your child reads with understanding, writes short paragraphs in English and Hindi, and handles three-digit numbers."
+  },
+  {
+    name: "Class 2", age: "7–8 years",
+    intro: "Reading turns into a tool rather than a task. Children read to find things out, and their writing starts to carry a beginning, middle and end.",
+    day: ["Subject periods", "Library", "Computer / GK", "Sports"],
+    areas: [
+      { title: "English", items: ["Reads chapter stories", "Tenses and adjectives", "Picture composition and letters"] },
+      { title: "Hindi", items: ["मात्रा words with ease", "Reads a short passage aloud", "Simple sentence writing"] },
+      { title: "Maths", items: ["Tables 2–10", "Multiplication and division", "Word problems, time and money"] },
+      { title: "Beyond books", items: ["Group projects", "Stage confidence", "Basic computer use"] }
+    ],
+    outcome: "Your child reads fluently for meaning, knows tables to 10, and writes a structured paragraph on their own."
+  },
+  {
+    name: "Class 3", age: "8–9 years",
+    intro: "Our last year together focuses on independence: managing homework, revising for an exam, and speaking to a room without nerves.",
+    day: ["Subject periods", "Revision & tests", "Debate / recitation", "Sports & club"],
+    areas: [
+      { title: "English", items: ["Grammar in context", "Essays, letters, story writing", "Reads independently for pleasure"] },
+      { title: "Hindi", items: ["Comprehension passages", "अनुच्छेद और पत्र लेखन", "Grammar basics"] },
+      { title: "Maths", items: ["Four operations to 10,000", "Fractions and basic geometry", "Multi-step word problems"] },
+      { title: "Readiness", items: ["Revises for exams alone", "Speaks confidently on stage", "Moves smoothly to big school"] }
+    ],
+    outcome: "Your child leaves us reading widely, writing clearly, and ready to walk into Class 4 at any school in Gurugram."
+  }
+];
+
+const SCHEDULE = [
+  { time: "9:00 am", what: "Doors open", note: "Warm welcome, bags away, wash hands" },
+  { time: "9:20 am", what: "Circle time", note: "Prayer, weather, news from home" },
+  { time: "9:45 am", what: "Learning block", note: "Language or numbers, in small groups" },
+  { time: "10:30 am", what: "Snack together", note: "Tiffin at the table, no rush" },
+  { time: "11:00 am", what: "Free play", note: "Blocks, sand, dolls, ride-ons" },
+  { time: "11:40 am", what: "Art, music or story", note: "Rotates through the week" },
+  { time: "12:30 pm", what: "Wind down and pick-up", note: "Rhymes, then handover to a named adult" }
+];
+
+class Component extends DCLogic {
+  state = { stage: 0 };
+  renderVals() {
+    const i = this.state.stage;
+    return {
+      tabs: STAGES.map((s, n) => ({
+        name: s.name,
+        bg: n === i ? "var(--color-accent)" : "transparent",
+        fg: n === i ? "var(--color-bg)" : "var(--color-text)",
+        bc: n === i ? "var(--color-accent)" : "var(--color-divider)",
+        onSelect: () => this.setState({ stage: n })
+      })),
+      active: STAGES[i],
+      schedule: SCHEDULE
+    };
+  }
+}
+</script>
+</body>
+</html>

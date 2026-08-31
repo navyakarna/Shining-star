@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/organic-39b38995-affe-44a8-b16d-9f2643bf4761/styles.css">
+<script src="_ds/organic-39b38995-affe-44a8-b16d-9f2643bf4761/_ds_bundle.js"></script>
+<style>
+  :root {
+    --color-bg: #fffdf6;
+    --color-surface: #eef6e9;
+    --joy-yellow: #f9d75c;
+    --joy-yellow-100: #fdf3d0;
+    --joy-pink: #f2a2b5;
+    --joy-pink-100: #fdeaf0;
+  }
+  html { scroll-behavior: smooth; }
+  a { text-decoration: none; }
+  a:hover { color: var(--color-accent-700); }
+  @media (max-width: 900px) {
+    #bio, #foot, #facilities { grid-template-columns: 1fr !important; }
+    #nav-links { display: none !important; }
+    #portrait { max-width: 340px; }
+  }
+</style>
+</helmet>
+
+<div style="overflow-x: hidden">
+
+  <header style="position: sticky; top: 0; z-index: 50; background: var(--color-bg)">
+    <div class="nav" style="max-width: 1080px; margin: 0 auto; padding: var(--space-4) var(--space-6)">
+      <a class="nav-brand" href="Home.dc.html" style="display: flex; align-items: center; gap: var(--space-2); color: inherit">
+        <img src="assets/mascot.png" alt="Shining Star" style="width: 104px; height: 80px; object-fit: contain; mix-blend-mode: multiply" />
+        <span style="line-height: 1.05; font-size: 27px">Shining Star
+          <span style="display: block; font-family: var(--font-body); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-neutral-700)">Play Group · Gurugram</span>
+        </span>
+      </a>
+      <nav id="nav-links" style="display: flex; align-items: center; gap: var(--space-4)">
+        <a href="Home.dc.html">Home</a>
+        <a href="Classes.dc.html">Classes</a>
+        <a href="Gallery.dc.html">Gallery</a>
+        <a href="Founder.dc.html" aria-current="page">Our Founder</a>
+        <a href="Admissions.dc.html">Admissions</a>
+      </nav>
+      <a class="btn btn-primary" href="tel:09582200999" style="color: var(--color-bg)">Call 095822 00999</a>
+    </div>
+  </header>
+
+  <section id="bio" style="max-width: 1080px; margin: 0 auto; padding: calc(var(--space-8) * 2.2) var(--space-6); display: grid; grid-template-columns: 0.75fr 1.25fr; gap: calc(var(--space-8) * 1.8); align-items: start">
+    <div id="portrait" style="position: relative">
+      <div style="aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--color-accent-2-100)">
+        <img src="assets/founder-shakun-karnas.jpg" alt="Mrs. Shakun Karnas, Founder and Director" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.42) translateY(1%); display: block" />
+      </div>
+      <div style="position: absolute; right: -14px; top: -18px; font-size: 46px; color: var(--joy-yellow); line-height: 1">★</div>
+    </div>
+    <div>
+      <span class="tag tag-accent-2" style="font-size: 13px; padding: 6px 14px">★ Founder &amp; Director since 2013</span>
+      <h1 style="font-size: clamp(38px, 5vw, 62px); line-height: 1.04; margin: var(--space-4) 0 var(--space-2)">Mrs. Shakun Karnas</h1>
+      <p style="font-size: 18px; color: var(--color-accent-700); margin: 0 0 var(--space-6)">Founder &amp; Director, Shining Star Play Group School, Gurgaon</p>
+
+      <p style="font-size: 19.5px; line-height: 1.6; color: var(--color-neutral-900); max-width: 44ch">Visionary Educational Entrepreneur and Leader with 13+ years of experience in establishing and managing early childhood education centers.</p>
+      <p style="font-size: 17.5px; line-height: 1.65; color: var(--color-neutral-800); max-width: 52ch">As the Founder and Director of Shining Star Play Group School in Gurgaon since 2013, I have successfully driven the institution's growth from the ground up, establishing it as a trusted name for foundational learning in the region.</p>
+
+      <div class="card" style="background: var(--joy-yellow-100); padding: var(--space-6); margin: var(--space-6) 0; max-width: 46ch">
+        <p style="font-family: var(--font-heading); font-size: 22px; line-height: 1.35; margin: 0">“Children don't need to be pushed. They need to be noticed.”</p>
+        <div class="card-meta">— Mrs. Shakun Karnas</div>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--color-divider)">
+        <div>
+          <div style="font-family: var(--font-heading); font-size: 26px">13+ years</div>
+          <div style="font-size: 13px; color: var(--color-neutral-700)">In early childhood education</div>
+        </div>
+        <div>
+          <div style="font-family: var(--font-heading); font-size: 26px">Since 2013</div>
+          <div style="font-size: 13px; color: var(--color-neutral-700)">Leading Shining Star</div>
+        </div>
+        <div style="align-self: center">
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/shakun-karnas-3197b0421/" target="_blank" rel="noopener">LinkedIn profile →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--color-surface)">
+    <div style="max-width: 1080px; margin: 0 auto; padding: calc(var(--space-8) * 2.2) var(--space-6)">
+      <div class="washed" style="float: right; width: 300px; max-width: 42%; margin: 0 0 var(--space-6) var(--space-8); aspect-ratio: 3/4; border-radius: calc(var(--radius-lg) * 1.4); overflow: hidden; background: var(--color-bg)">
+        <img src="assets/photo-holi.jpg" alt="Holi celebration at school" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block" />
+      </div>
+      <h2 style="font-size: clamp(30px, 3.4vw, 42px); margin: 0 0 var(--space-2)">How the school is run</h2>
+      <p style="font-size: 17px; color: var(--color-neutral-800); max-width: 50ch; margin: 0 0 var(--space-6)">Mrs. Karnas is at school every day. Teachers are trained in-house on the principle she started with — watch the child first, then teach.</p>
+      <div style="display: grid; gap: calc(var(--space-8) * 1.2); max-width: 62ch">
+        <div style="display: grid; grid-template-columns: 62px 1fr; gap: var(--space-6); align-items: start">
+          <span class="star" style="width: 62px; height: 62px; border-radius: 50%; background: var(--joy-pink); display: grid; place-items: center; font-family: var(--font-heading); font-size: 22px; color: var(--color-bg)">1</span>
+          <div>
+            <h3 style="font-size: 22px; margin: 0 0 6px">Teachers who stay</h3>
+            <p style="font-size: 16.5px; line-height: 1.6; margin: 0; color: var(--color-neutral-800)">One class teacher for the whole year, with a helper in every pre-primary room.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 62px 1fr; gap: var(--space-6); align-items: start">
+          <span class="star" style="width: 62px; height: 62px; border-radius: 50%; background: var(--color-accent-2-300); display: grid; place-items: center; font-family: var(--font-heading); font-size: 22px; color: var(--color-accent-2-900); animation-delay: .8s">2</span>
+          <div>
+            <h3 style="font-size: 22px; margin: 0 0 6px">Parents get answers</h3>
+            <p style="font-size: 16.5px; line-height: 1.6; margin: 0; color: var(--color-neutral-800)">Talk to the teacher directly at pick-up, and to the Director whenever you need to.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 62px 1fr; gap: var(--space-6); align-items: start">
+          <span class="star" style="width: 62px; height: 62px; border-radius: 50%; background: var(--joy-yellow); display: grid; place-items: center; font-family: var(--font-heading); font-size: 22px; color: var(--color-accent-900); animation-delay: 1.6s">3</span>
+          <div>
+            <h3 style="font-size: 22px; margin: 0 0 6px">A monthly note home</h3>
+            <p style="font-size: 16.5px; line-height: 1.6; margin: 0; color: var(--color-neutral-800)">A short written update on how your child is settling, speaking and learning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width: 1080px; margin: 0 auto; padding: calc(var(--space-8) * 2.2) var(--space-6)">
+    <h2 style="font-size: clamp(30px, 3.4vw, 42px); margin: 0 0 var(--space-2)">Facilities &amp; safety</h2>
+    <p style="font-size: 17px; color: var(--color-neutral-800); max-width: 50ch; margin: 0 0 var(--space-6)">Check every line on this list when you visit — and correct anything here that doesn't match the school.</p>
+    <div id="facilities" style="display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--space-8) * 1.2) calc(var(--space-8) * 1.8); max-width: 900px">
+        <div style="display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); align-items: start">
+          <span class="star" style="font-size: 19px; line-height: 1.2; color: var(--color-accent-2); animation-delay: 0s">★</span>
+          <div>
+            <div style="font-family: var(--font-heading); font-size: 19px">Child-proofed rooms</div>
+            <p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.55; color: var(--color-neutral-800)">Padded corners, low furniture, no open stairs.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); align-items: start">
+          <span class="star" style="font-size: 19px; line-height: 1.2; color: var(--joy-pink); animation-delay: 0.4s">★</span>
+          <div>
+            <div style="font-family: var(--font-heading); font-size: 19px">CCTV coverage</div>
+            <p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.55; color: var(--color-neutral-800)">Common areas and classrooms monitored.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); align-items: start">
+          <span class="star" style="font-size: 19px; line-height: 1.2; color: var(--color-accent-2); animation-delay: 0.8s">★</span>
+          <div>
+            <div style="font-family: var(--font-heading); font-size: 19px">Named-adult handover</div>
+            <p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.55; color: var(--color-neutral-800)">Children leave only with a listed guardian.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); align-items: start">
+          <span class="star" style="font-size: 19px; line-height: 1.2; color: var(--joy-pink); animation-delay: 1.2000000000000002s">★</span>
+          <div>
+            <div style="font-family: var(--font-heading); font-size: 19px">Clean washrooms</div>
+            <p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.55; color: var(--color-neutral-800)">Child-height fittings, helper on call.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); align-items: start">
+          <span class="star" style="font-size: 19px; line-height: 1.2; color: var(--color-accent-2); animation-delay: 1.6s">★</span>
+          <div>
+            <div style="font-family: var(--font-heading); font-size: 19px">Indoor play area</div>
+            <p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.55; color: var(--color-neutral-800)">Soft mats, blocks and ride-ons for rainy days.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 24px 1fr; gap: var(--space-3); align-items: start">
+          <span class="star" style="font-size: 19px; line-height: 1.2; color: var(--joy-pink); animation-delay: 2s">★</span>
+          <div>
+            <div style="font-family: var(--font-heading); font-size: 19px">First aid on site</div>
+            <p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.55; color: var(--color-neutral-800)">Trained staff and a stocked kit at reception.</p>
+          </div>
+        </div>
+      </div>
+
+    <div style="display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-6)">
+      <a class="btn btn-primary" href="tel:09582200999" style="font-size: 16px; padding: var(--space-3) var(--space-6)">Call now</a>
+      <a class="btn btn-secondary" href="Admissions.dc.html" style="font-size: 16px; padding: var(--space-3) var(--space-6)">Admissions &amp; fees</a>
+    </div>
+  </section>
+
+  <footer style="background: var(--color-accent-2-900); color: var(--color-accent-2-100)">
+    <div id="foot" style="max-width: 1080px; margin: 0 auto; padding: calc(var(--space-8) * 2.2) var(--space-6); display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: var(--space-6)">
+      <div>
+        <div style="font-family: var(--font-heading); font-size: 24px; color: var(--color-bg)">Shining Star Play Group ★</div>
+        <p style="font-size: 14.5px; margin: var(--space-2) 0 0; opacity: .85">Laxman Vihar, Plot no. 912/31,<br>Gurugram, Haryana 122006</p>
+      </div>
+      <div style="font-size: 14.5px; display: grid; gap: 6px; align-content: start">
+        <div style="font-family: var(--font-heading); font-size: 16px; color: var(--color-bg)">Reach us</div>
+        <a href="tel:09582200999" style="color: var(--joy-yellow)">095822 00999</a>
+        <div style="opacity: .85">Opens 9:00 am · Mon–Sat</div>
+        <a href="Admissions.dc.html" style="color: var(--joy-yellow)">Map &amp; directions</a>
+      </div>
+      <div style="font-size: 14.5px; display: grid; gap: 6px; align-content: start">
+        <div style="font-family: var(--font-heading); font-size: 16px; color: var(--color-bg)">Pages</div>
+        <a href="Home.dc.html" style="color: var(--joy-yellow)">Home</a>
+        <a href="Classes.dc.html" style="color: var(--joy-yellow)">Classes &amp; learning</a>
+        <a href="Gallery.dc.html" style="color: var(--joy-yellow)">Gallery</a>
+        <a href="Admissions.dc.html" style="color: var(--joy-yellow)">Admissions &amp; fees</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>
